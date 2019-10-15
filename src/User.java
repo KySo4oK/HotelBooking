@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class User {
-    public ArrayList<Room> userBookings;
+    public ArrayList<Order> userOrders;
     public void book(Date date){
 
     }
