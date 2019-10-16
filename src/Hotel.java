@@ -1,9 +1,11 @@
-import javax.print.attribute.standard.OrientationRequested;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashMap;
 
-public class Hotel {
+interface MyService {
+    String echo (String message);
+}
+
+public class Hotel implements MyService{
     private ArrayList<User> users;
     private User currentUser;
     private ArrayList<AdditionalOption> additionalOptions;
@@ -11,6 +13,10 @@ public class Hotel {
     private ArrayList<Category> categories;
     private ArrayList<Order> bookings;
     private ArrayList<AdditionalOption> selectedAdditionalOptions;
+
+    public String echo (String message) {
+        return message;
+    }
 
     void viewRoomsByCategories(Category category){
         category.getAvailableRooms();
@@ -109,5 +115,21 @@ public class Hotel {
 
     public void setAdditionalOptions(ArrayList<AdditionalOption> additionalOptions) {
         this.additionalOptions = additionalOptions;
+    }
+
+    public User getCurrentUser() {
+        return currentUser;
+    }
+
+    public void setCurrentUser(User currentUser) {
+        this.currentUser = currentUser;
+    }
+
+    public ArrayList<AdditionalOption> getSelectedAdditionalOptions() {
+        return selectedAdditionalOptions;
+    }
+
+    public void setSelectedAdditionalOptions(ArrayList<AdditionalOption> selectedAdditionalOptions) {
+        this.selectedAdditionalOptions = selectedAdditionalOptions;
     }
 }
