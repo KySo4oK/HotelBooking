@@ -6,9 +6,13 @@ public class Room {
     public String category;
     private int price;
     public ArrayList<AdditionalOption> availableAdditionalOptions;
-    public ArrayList<Order> bookings;
+    private ArrayList<Order> bookings;
 
     public int getPrice() {
         return price;
+    }
+
+    public ArrayList<Order> getBookings() {
+        return bookings;
     }
 }
