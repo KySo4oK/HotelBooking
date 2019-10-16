@@ -4,7 +4,7 @@ import java.util.HashMap;
 
 public class Hotel {
     private ArrayList<Room> rooms;
-    public ArrayList<Category> categories;
+    private ArrayList<Category> categories;
     private ArrayList<Order> bookings;
     void viewRoomsByCategories(Category category){
         category.getAvailableRooms();
@@ -20,4 +20,19 @@ public class Hotel {
         bookings.add(order);
     }
 
+    public void setRooms(ArrayList<Room> rooms) {
+        this.rooms = rooms;
+    }
+
+    public ArrayList<Category> getCategories() {
+        return categories;
+    }
+
+    public void setCategories(ArrayList<Category> categories) {
+        this.categories = categories;
+    }
+
+    public void setBookings(ArrayList<Order> bookings) {
+        this.bookings = bookings;
+    }
 }

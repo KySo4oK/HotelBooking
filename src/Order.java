@@ -13,14 +13,14 @@ public class Order {
         this.category = category;
         this.selectedAdditionalOptions = selectedAdditionalOptions;
     }
-    public Room room;
-    User user;
-    public Category category;
-    public ArrayList<AdditionalOption> selectedAdditionalOptions;
+    private Room room;
+    private User user;
+    private Category category;
+    private ArrayList<AdditionalOption> selectedAdditionalOptions;
     private Date startDate;
     private Date endDate;
     private int days;
-    public int totalPrice;
+    private int totalPrice;
     public int getTotalPrice(){
         totalPrice = 0;
         for(int i = 0; i < selectedAdditionalOptions.size(); i++){
@@ -40,5 +40,53 @@ public class Order {
 
     public Date getStartDate() {
         return startDate;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
+    public Room getRoom() {
+        return room;
+    }
+
+    public void setRoom(Room room) {
+        this.room = room;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public ArrayList<AdditionalOption> getSelectedAdditionalOptions() {
+        return selectedAdditionalOptions;
+    }
+
+    public void setSelectedAdditionalOptions(ArrayList<AdditionalOption> selectedAdditionalOptions) {
+        this.selectedAdditionalOptions = selectedAdditionalOptions;
+    }
+
+    public void setStartDate(Date startDate) {
+        this.startDate = startDate;
+    }
+
+    public void setEndDate(Date endDate) {
+        this.endDate = endDate;
+    }
+
+    public void setDays(int days) {
+        this.days = days;
+    }
+
+    public void setTotalPrice(int totalPrice) {
+        this.totalPrice = totalPrice;
     }
 }
