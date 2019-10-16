@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.concurrent.TimeUnit;
 
 public class Order {
     Order(){}
@@ -21,18 +20,6 @@ public class Order {
     private Date endDate;
     private int days;
     private int totalPrice;
-    public int getTotalPrice(){
-        totalPrice = 0;
-        for(int i = 0; i < selectedAdditionalOptions.size(); i++){
-            totalPrice += selectedAdditionalOptions.get(i).price;
-        }
-        return totalPrice + room.getPrice()*(getDays());
-    }
-
-    public int getDays() {
-        return (int)((endDate.getTime() -
-                startDate.getTime())/(1000*60*60*24));
-    }
 
     public Date getEndDate() {
         return endDate;
@@ -88,5 +75,13 @@ public class Order {
 
     public void setTotalPrice(int totalPrice) {
         this.totalPrice = totalPrice;
+    }
+
+    public int getDays() {
+        return days;
+    }
+
+    public int getTotalPrice() {
+        return totalPrice;
     }
 }
