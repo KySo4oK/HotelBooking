@@ -1,10 +1,6 @@
 import java.util.ArrayList;
 import java.util.Date;
 
-interface MyService {
-    String echo (String message);
-}
-
 public class Hotel implements MyService{
     private ArrayList<User> users;
     private User currentUser;
@@ -13,14 +9,6 @@ public class Hotel implements MyService{
     private ArrayList<Category> categories;
     private ArrayList<Order> bookings;
     private ArrayList<AdditionalOption> selectedAdditionalOptions;
-
-    public String echo (String message) {
-        return message;
-    }
-
-    void viewRoomsByCategories(Category category){
-        category.getAvailableRooms();
-    }
 
     public void book(Date startDate, Date endDate){
         ArrayList<Room> availableRooms = getRooms();
@@ -131,5 +119,10 @@ public class Hotel implements MyService{
 
     public void setSelectedAdditionalOptions(ArrayList<AdditionalOption> selectedAdditionalOptions) {
         this.selectedAdditionalOptions = selectedAdditionalOptions;
+    }
+
+    @Override
+    public void viewRoomsByCategory(Category category) {
+        category.getAvailableRooms();
     }
 }
