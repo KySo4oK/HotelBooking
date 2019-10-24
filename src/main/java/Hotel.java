@@ -1,5 +1,12 @@
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.ArrayList;
 import java.util.Date;
+
+@Setter
+@Getter
+
 
 public class Hotel implements MyService{
     private ArrayList<User> users;
@@ -61,67 +68,10 @@ public class Hotel implements MyService{
                 startDate.getTime())/(1000*60*60*24));
     }
 
-    public ArrayList<Room> getRooms() { // view all available rooms
-        return rooms;
-    }
-
-    public ArrayList<Order> getBookings(){
-        return bookings;
-    }
-
     public void addBook(Order order){
         bookings.add(order);
     }
 
-    public void setRooms(ArrayList<Room> rooms) {
-        this.rooms = rooms;
-    }
-
-    public ArrayList<Category> getCategories() {
-        return categories;
-    }
-
-    public void setCategories(ArrayList<Category> categories) {
-        this.categories = categories;
-    }
-
-    public void setBookings(ArrayList<Order> bookings) {
-        this.bookings = bookings;
-    }
-
-    public ArrayList<User> getUsers() {
-        return users;
-    }
-
-    public void setUsers(ArrayList<User> users) {
-        this.users = users;
-    }
-
-    public ArrayList<AdditionalOption> getAdditionalOptions() {
-        return additionalOptions;
-    }
-
-    public void setAdditionalOptions(ArrayList<AdditionalOption> additionalOptions) {
-        this.additionalOptions = additionalOptions;
-    }
-
-    public User getCurrentUser() {
-        return currentUser;
-    }
-
-    public void setCurrentUser(User currentUser) {
-        this.currentUser = currentUser;
-    }
-
-    public ArrayList<AdditionalOption> getSelectedAdditionalOptions() {
-        return selectedAdditionalOptions;
-    }
-
-    public void setSelectedAdditionalOptions(ArrayList<AdditionalOption> selectedAdditionalOptions) {
-        this.selectedAdditionalOptions = selectedAdditionalOptions;
-    }
-
-    @Override
     public void viewRoomsByCategory(Category category) {
         category.getAvailableRooms();
     }
