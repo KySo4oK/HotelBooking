@@ -1,11 +1,16 @@
 import lombok.Getter;
 import lombok.Setter;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import java.util.ArrayList;
 import java.util.Date;
 
 @Setter
 @Getter
+@Entity
+@Table(name = "hotel")
 
 
 public class Hotel implements MyService{
@@ -14,6 +19,7 @@ public class Hotel implements MyService{
     private ArrayList<AdditionalOption> additionalOptions;
     private ArrayList<Room> rooms;
     private ArrayList<Category> categories;
+    @Column(name = "bookings")
     private ArrayList<Order> bookings;
     private ArrayList<AdditionalOption> selectedAdditionalOptions;
 
