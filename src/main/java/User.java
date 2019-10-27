@@ -19,6 +19,4 @@ public class User {
     private String userPassword;
     @Column(name = "login")
     private String userLogin;
-    private Hotel hotel;
-    private ArrayList<Order> userOrders;
 }

@@ -5,7 +5,7 @@ import javax.persistence.Persistence;
 public class Main {
     static EntityManagerFactory emf;
     public static void main(String[] args) {
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("PERSISTENCE_UNIT_NAME");
+        emf = Persistence.createEntityManagerFactory("PERSISTENCE_UNIT_NAME");
         EntityManager em = getEntityManager();
         AdditionalOption additionalOption = getAddOP();
         additionalOption.setPrice(10);

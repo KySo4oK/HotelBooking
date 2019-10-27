@@ -17,9 +17,7 @@ public class Room {
     @GenericGenerator(name = "incrementator", strategy = "increment")
     private int number;
     @Column(name = "category_id")
-    private Category category;
+    private int category_id;
     @Column(name = "price")
     private int price;
-    private ArrayList<AdditionalOption> availableAdditionalOptions;
-    private ArrayList<Order> bookings;
 }

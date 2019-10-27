@@ -18,5 +18,4 @@ public class Category {
     private int categoryID;
     @Column(name = "name")
     private String name;
-    private ArrayList<Room> availableRooms;
 }

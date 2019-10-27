@@ -8,26 +8,35 @@ import java.util.Date;
 
 @Setter
 @Getter
-@Entity
-@Table(name = "hotel")
+
 
 
 public class Hotel implements MyService{
-    @Id
-    @Column(name="id")
-    @GeneratedValue(generator = "increment")
-    @GenericGenerator(name = "incrementator", strategy = "increment")
     private int id;
     private ArrayList<User> users;
     private User currentUser;
     private ArrayList<AdditionalOption> additionalOptions;
     private ArrayList<Room> rooms;
     private ArrayList<Category> categories;
-    @Column(name = "bookings")
     private ArrayList<Order> bookings;
     private ArrayList<AdditionalOption> selectedAdditionalOptions;
 
-    public void book(Date startDate, Date endDate){
+    @Override
+    public void viewRoomsByCategory(Category category) {
+
+    }
+
+    @Override
+    public void book(Date startDate, Date endDate) {
+
+    }
+
+    @Override
+    public int getTotalPrice(Room currentRoom, Date startDate, Date endDate) {
+        return 0;
+    }
+
+    /*public void book(Date startDate, Date endDate){
         ArrayList<Room> availableRooms = getRooms();
         for(int i = 0; i < availableRooms.size(); i++){
             if(!checkDates(availableRooms.get(i),startDate,endDate)){
@@ -85,4 +94,6 @@ public class Hotel implements MyService{
     public void viewRoomsByCategory(Category category) {
         category.getAvailableRooms();
     }
+
+     */
 }

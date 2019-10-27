@@ -3,6 +3,7 @@ import lombok.Setter;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -18,4 +19,6 @@ public class AdditionalOption {
     private String name;
     @Column(name = "price")
     private int price;
+    @OneToMany(mappedBy = "additionalOption")
+    private Set<OrderAdditionalOption> Orders;
 }

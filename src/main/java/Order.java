@@ -7,6 +7,8 @@ import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Set;
+
 @Getter
 @Setter
 @AllArgsConstructor
@@ -21,12 +23,13 @@ public class Order {
     @GenericGenerator(name = "incrementator", strategy = "increment")
     private int orderID;
     @Column(name = "room_id")
-    private Room room;
+    private int room_id;
     @Column(name = "user_id")
-    private User user;
+    private int user_id;
     @Column(name = "category")
-    private Category category;
-    private ArrayList<AdditionalOption> selectedAdditionalOptions;
+    private int category_id;
+    @OneToMany(mappedBy = "order")
+    private Set<OrderAdditionalOption> selectedAdditionalOptions;
     @Column(name = "startDate")
     private Date startDate;
     @Column(name = "endDate")
