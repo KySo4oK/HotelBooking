@@ -1,9 +1,8 @@
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.GenericGenerator;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -14,6 +13,11 @@ import java.util.Date;
 
 
 public class Hotel implements MyService{
+    @Id
+    @Column(name="id")
+    @GeneratedValue(generator = "increment")
+    @GenericGenerator(name = "incrementator", strategy = "increment")
+    private int id;
     private ArrayList<User> users;
     private User currentUser;
     private ArrayList<AdditionalOption> additionalOptions;
