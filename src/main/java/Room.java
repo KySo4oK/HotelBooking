@@ -1,9 +1,8 @@
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.GenericGenerator;
-
 import javax.persistence.*;
-import java.util.ArrayList;
+
 
 @Getter
 @Setter
@@ -15,9 +14,9 @@ public class Room {
     @Column(name="number")
     @GeneratedValue(generator = "increment")
     @GenericGenerator(name = "incrementator", strategy = "increment")
-    private int number;
+    private Integer number;
     @Column(name = "category_id")
-    private int category_id;
+    private Integer category_id;
     @Column(name = "price")
-    private int price;
+    private Integer price;
 }

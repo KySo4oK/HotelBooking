@@ -1,7 +1,6 @@
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.GenericGenerator;
-
 import javax.persistence.*;
 import java.util.Set;
 
@@ -14,11 +13,11 @@ public class AdditionalOption {
     @Column(name="option_id")
     @GeneratedValue(generator = "increment")
     @GenericGenerator(name = "incrementator", strategy = "increment")
-    private int optionID;
+    private Integer optionID;
     @Column(name = "name")
     private String name;
     @Column(name = "price")
-    private int price;
+    private Integer price;
     @OneToMany(mappedBy = "additionalOption")
     private Set<OrderAdditionalOption> Orders;
 }
