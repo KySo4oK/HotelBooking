@@ -8,9 +8,9 @@ public class Main {
         emf = Persistence.createEntityManagerFactory("PERSISTENCE_UNIT_NAME");
         EntityManager em = getEntityManager();
         AdditionalOption additionalOption = getAddOP();
-        additionalOption.setPrice(10);
+        additionalOption.setPrice(11);
         additionalOption.setOptionID(1);
-        additionalOption.setName("gfdsgds");
+        additionalOption.setName("good");
         em.getTransaction().begin();
         em.merge(additionalOption);
         em.getTransaction().commit();

@@ -20,10 +20,12 @@ public class Order {
     @GeneratedValue(generator = "increment")
     @GenericGenerator(name = "incrementator", strategy = "increment")
     private Integer orderID;
-    @Column(name = "room_id")
-    private Integer room_id;
-    @Column(name = "user_id")
-    private Integer user_id;
+    @ManyToOne
+    @JoinColumn(name = "room_id")
+    private Room room;
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
     @Column(name = "category")
     private Integer category_id;
     @OneToMany(mappedBy = "order")
