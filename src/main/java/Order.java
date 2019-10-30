@@ -1,7 +1,4 @@
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;
 import java.util.Date;
@@ -34,6 +31,8 @@ public class Order {
     private Date startDate;
     @Column(name = "endDate")
     private Date endDate;
+    @Transient
+    @Setter(AccessLevel.NONE)
     private Integer days;
     @Column(name = "totalPrice")
     private Integer totalPrice;
