@@ -15,8 +15,9 @@ public class Room {
     @GeneratedValue(generator = "increment")
     @GenericGenerator(name = "incrementator", strategy = "increment")
     private Integer number;
-    @Column(name = "category_id")
-    private Integer category_id;
+    @ManyToOne
+    @JoinColumn(name = "category_id")
+    private Category category;
     @Column(name = "price")
     private Integer price;
 }

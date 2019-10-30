@@ -23,8 +23,6 @@ public class Order {
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
-    @Column(name = "category")
-    private Integer category_id;
     @OneToMany(mappedBy = "order")
     private Set<OrderAdditionalOption> selectedAdditionalOptions;
     @Column(name = "startDate")
