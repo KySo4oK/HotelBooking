@@ -24,7 +24,7 @@ public class Order {
     @JoinColumn(name = "user_id")
     private User user;
     @ManyToMany
-    private Set<AdditionalOption> AdditionalOptions;
+    private Set<AdditionalOption> additionalOptions;
     @Column(name = "startDate")
     private Date startDate;
     @Column(name = "endDate")
