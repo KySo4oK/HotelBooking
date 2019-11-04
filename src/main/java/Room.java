@@ -2,6 +2,7 @@ import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;
+import java.util.List;
 
 
 @Getter
@@ -20,4 +21,6 @@ public class Room {
     private Category category;
     @Column(name = "price")
     private Integer price;
+    @OneToMany(mappedBy = "room")
+    private List<Order> orders;
 }

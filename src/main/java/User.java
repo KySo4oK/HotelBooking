@@ -2,6 +2,7 @@ import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;
+import java.util.List;
 
 @Setter
 @Getter
@@ -17,4 +18,6 @@ public class User {
     private String userPassword;
     @Column(name = "login")
     private String userLogin;
+    @OneToMany(mappedBy = "user")
+    private List<Order> orders;
 }
