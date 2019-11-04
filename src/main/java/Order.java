@@ -2,6 +2,7 @@ import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 import java.util.Set;
 
 @Getter
@@ -23,8 +24,8 @@ public class Order {
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
-    @OneToMany(mappedBy = "order")
-    private Set<OrderAdditionalOption> selectedAdditionalOptions;
+    @ManyToMany
+    private List<AdditionalOption> AdditionalOptions;
     @Column(name = "startDate")
     private Date startDate;
     @Column(name = "endDate")

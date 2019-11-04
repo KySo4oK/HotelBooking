@@ -18,6 +18,4 @@ public class AdditionalOption {
     private String name;
     @Column(name = "price")
     private Integer price;
-    @OneToMany(mappedBy = "additionalOption")
-    private Set<OrderAdditionalOption> Orders;
 }
