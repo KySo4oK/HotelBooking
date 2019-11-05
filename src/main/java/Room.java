@@ -23,4 +23,17 @@ public class Room {
     private Integer price;
     @OneToMany(mappedBy = "room")
     private Set<Order> orders;
+    public boolean equals(Object obj) {
+        if (obj == this)
+            return true;
+        if (!(obj instanceof Room))
+            return false;
+        Room other = (Room) obj;
+        return this.number.intValue() == other.number.intValue();
+    }
+
+    @Override
+    public int hashCode() {
+        return number;
+    }
 }

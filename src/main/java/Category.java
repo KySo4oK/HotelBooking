@@ -17,4 +17,23 @@ public class Category {
     private Integer categoryID;
     @Column(name = "name")
     private String name;
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == this)
+            return true;
+        if (!(obj instanceof Category))
+            return false;
+        Category other = (Category) obj;
+        return (this.name == null && other.name == null)
+                || (this.name != null && this.name.equals(other.name));
+    }
+
+    @Override
+    public int hashCode() {
+        int result = 17;
+        if (name != null) {
+            result = 31 * result + name.hashCode();
+        }
+        return result;
+    }
 }
