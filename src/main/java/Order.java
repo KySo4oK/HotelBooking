@@ -24,6 +24,10 @@ public class Order {
     @JoinColumn(name = "user_id")
     private User user;
     @ManyToMany
+    @JoinTable(
+            name = "orderAdditionalOptions",
+            joinColumns = @JoinColumn(name = "order_id"),
+            inverseJoinColumns = @JoinColumn(name = "additionalOptions_id"))
     private Set<AdditionalOption> additionalOptions;
     @Column(name = "startDate")
     private Date startDate;
