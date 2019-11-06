@@ -25,7 +25,8 @@ public class Category {
             return false;
         Category other = (Category) obj;
         return (this.name == null && other.name == null)
-                || (this.name != null && this.name.equals(other.name));
+                || (this.name != null && this.name.equals(other.name)
+                && this.categoryID.intValue()==other.categoryID.intValue());
     }
 
     @Override
@@ -33,6 +34,9 @@ public class Category {
         int result = 17;
         if (name != null) {
             result = 31 * result + name.hashCode();
+        }
+        if (categoryID != null) {
+            result = 31 * result + categoryID;
         }
         return result;
     }

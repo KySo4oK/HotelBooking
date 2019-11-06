@@ -27,7 +27,8 @@ public class User {
             return false;
         User other = (User) obj;
         return (this.userLogin == null && other.userLogin == null)
-                || (this.userLogin != null && this.userLogin.equals(other.userLogin));
+                || (this.userLogin != null && this.userLogin.equals(other.userLogin))&&
+                this.userID.intValue() == other.userID.intValue();
     }
 
     @Override
@@ -40,7 +41,7 @@ public class User {
             result = 31 * result + userLogin.hashCode();
         }
         if (userID != null) {
-            result = 31 * result + userLogin.hashCode();
+            result = 31 * result + userID.intValue();
         }
         return result;
     }

@@ -27,7 +27,8 @@ public class AdditionalOption {
         AdditionalOption other = (AdditionalOption) obj;
         boolean nameEquals = (this.name == null && other.name == null)
                 || (this.name != null && this.name.equals(other.name));
-        return this.price.intValue() == other.price.intValue() && nameEquals;
+        return this.price.intValue() == other.price.intValue() && nameEquals &&
+                this.optionID.intValue()==other.optionID.intValue();
     }
 
     @Override
@@ -38,6 +39,9 @@ public class AdditionalOption {
         }
         if (price != null) {
             result = 31 * result + price.hashCode();
+        }
+        if (optionID != null) {
+            result = 31 * result + optionID;
         }
         return result;
     }

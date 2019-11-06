@@ -34,6 +34,6 @@ public class Room {
 
     @Override
     public int hashCode() {
-        return number;
+        return number.intValue();
     }
 }

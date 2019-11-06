@@ -54,7 +54,8 @@ public class Order {
                 !(this.startDate.equals(other.startDate))){
             return false;
         }
-        return this.totalPrice.intValue() == other.totalPrice.intValue();
+        return this.totalPrice.intValue() == other.totalPrice.intValue() &&
+                this.orderID.intValue() == other.orderID.intValue();
     }
 
     @Override
@@ -77,6 +78,9 @@ public class Order {
         }
         if (totalPrice != null) {
             result = 31 * result + totalPrice.intValue();
+        }
+        if (orderID != null) {
+            result = 31 * result + orderID.intValue();
         }
         return result;
     }
