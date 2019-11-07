@@ -33,16 +33,6 @@ public class AdditionalOption {
 
     @Override
     public int hashCode() {
-        int result = 17;
-        if (name != null) {
-            result = 31 * result + name.hashCode();
-        }
-        if (price != null) {
-            result = 31 * result + price.hashCode();
-        }
-        if (optionID != null) {
-            result = 31 * result + optionID;
-        }
-        return result;
+        return optionID;
     }
 }

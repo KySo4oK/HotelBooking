@@ -31,13 +31,6 @@ public class Category {
 
     @Override
     public int hashCode() {
-        int result = 17;
-        if (name != null) {
-            result = 31 * result + name.hashCode();
-        }
-        if (categoryID != null) {
-            result = 31 * result + categoryID;
-        }
-        return result;
+        return categoryID;
     }
 }

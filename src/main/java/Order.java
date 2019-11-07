@@ -60,28 +60,6 @@ public class Order {
 
     @Override
     public int hashCode() {
-        int result = 17;
-        if (room != null) {
-            result = 31 * result + room.hashCode();
-        }
-        if (user != null) {
-            result = 31 * result + user.hashCode();
-        }
-        if (additionalOptions!= null) {
-            result = 31 * result + additionalOptions.hashCode();
-        }
-        if (endDate != null) {
-            result = 31 * result + endDate.hashCode();
-        }
-        if (startDate != null) {
-            result = 31 * result + startDate.hashCode();
-        }
-        if (totalPrice != null) {
-            result = 31 * result + totalPrice.intValue();
-        }
-        if (orderID != null) {
-            result = 31 * result + orderID.intValue();
-        }
-        return result;
+        return orderID;
     }
 }

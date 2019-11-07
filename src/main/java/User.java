@@ -33,16 +33,6 @@ public class User {
 
     @Override
     public int hashCode() {
-        int result = 17;
-        if (userLogin != null) {
-            result = 31 * result + userLogin.hashCode();
-        }
-        if (userPassword != null) {
-            result = 31 * result + userLogin.hashCode();
-        }
-        if (userID != null) {
-            result = 31 * result + userID.intValue();
-        }
-        return result;
+        return userID;
     }
 }
