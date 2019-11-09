@@ -19,14 +19,8 @@ public class Category {
     private String name;
     @Override
     public boolean equals(Object obj) {
-        if (obj == this)
-            return true;
-        if (!(obj instanceof Category))
-            return false;
         Category other = (Category) obj;
-        return (this.name == null && other.name == null)
-                || (this.name != null && this.name.equals(other.name)
-                && this.categoryID.intValue()==other.categoryID.intValue());
+        return this.categoryID.intValue()==other.categoryID.intValue();
     }
 
     @Override

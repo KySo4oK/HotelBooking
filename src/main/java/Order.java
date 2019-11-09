@@ -42,20 +42,8 @@ public class Order {
     private Integer totalPrice;
     @Override
     public boolean equals(Object obj) {
-        if (obj == this)
-            return true;
-        if (!(obj instanceof Order))
-            return false;
         Order other = (Order) obj;
-        if (!(this.room.equals(other.room)) ||
-                !(this.user.equals(other.user)) ||
-                !(this.additionalOptions.equals(other.additionalOptions)) ||
-                !(this.endDate.equals(other.endDate)) ||
-                !(this.startDate.equals(other.startDate))){
-            return false;
-        }
-        return this.totalPrice.intValue() == other.totalPrice.intValue() &&
-                this.orderID.intValue() == other.orderID.intValue();
+        return this.orderID.intValue() == other.orderID.intValue();
     }
 
     @Override

@@ -20,15 +20,8 @@ public class AdditionalOption {
 
     @Override
     public boolean equals(Object obj) {
-        if (obj == this)
-            return true;
-        if (!(obj instanceof AdditionalOption))
-            return false;
         AdditionalOption other = (AdditionalOption) obj;
-        boolean nameEquals = (this.name == null && other.name == null)
-                || (this.name != null && this.name.equals(other.name));
-        return this.price.intValue() == other.price.intValue() && nameEquals &&
-                this.optionID.intValue()==other.optionID.intValue();
+        return this.optionID.intValue()==other.optionID.intValue();
     }
 
     @Override

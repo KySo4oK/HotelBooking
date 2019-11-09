@@ -21,14 +21,8 @@ public class User {
     @OneToMany(mappedBy = "user")
     private Set<Order> orders;
     public boolean equals(Object obj) {
-        if (obj == this)
-            return true;
-        if (!(obj instanceof User))
-            return false;
         User other = (User) obj;
-        return (this.userLogin == null && other.userLogin == null)
-                || (this.userLogin != null && this.userLogin.equals(other.userLogin))&&
-                this.userID.intValue() == other.userID.intValue();
+        return this.userID.intValue() == other.userID.intValue();
     }
 
     @Override
