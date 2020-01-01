@@ -61,7 +61,7 @@ public class Hotel implements MyService{
         return emf.createEntityManager();
     }
 
-    /*public void book(Date startDate, Date endDate){
+    public void book(Date startDate, Date endDate){
         ArrayList<Room> availableRooms = getRooms();
         for(int i = 0; i < availableRooms.size(); i++){
             if(!checkDates(availableRooms.get(i),startDate,endDate)){
@@ -119,6 +119,4 @@ public class Hotel implements MyService{
     public void viewRoomsByCategory(Category category) {
         category.getAvailableRooms();
     }
-
-     */
 }
