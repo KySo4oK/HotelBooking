@@ -1,7 +1,12 @@
 import lombok.Getter;
 import lombok.Setter;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Setter
 @Getter
@@ -17,6 +22,8 @@ public class Hotel implements MyService{
     private ArrayList<Category> categories;
     private ArrayList<Order> bookings;
     private ArrayList<AdditionalOption> selectedAdditionalOptions;
+    private static EntityManagerFactory emf = Persistence.createEntityManagerFactory("PERSISTENCE_UNIT_NAME");
+    private static EntityManager em = getEntityManager();
 
     @Override
     public void viewRoomsByCategory(Category category) {
@@ -31,6 +38,25 @@ public class Hotel implements MyService{
     @Override
     public int getTotalPrice(Room currentRoom, Date startDate, Date endDate) {
         return 0;
+    }
+
+    @Override
+    public List<Room> getAllRooms() {
+        return null;
+    }
+
+    @Override
+    public List<Category> getAllCategories() {
+        return em.createQuery("SELECT a FROM Category a", Category.class).getResultList();
+    }
+
+    @Override
+    public List<AdditionalOption> getAllAdditionalOptions() {
+        return em.createQuery("SELECT a FROM AdditionalOption a", AdditionalOption.class).getResultList();
+    }
+
+    private static EntityManager getEntityManager() {
+        return emf.createEntityManager();
     }
 
     /*public void book(Date startDate, Date endDate){
