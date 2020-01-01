@@ -18,14 +18,6 @@ import java.util.List;
 
 
 public class Hotel implements MyService{
-    private int id;
-    private ArrayList<User> users;
-    private User currentUser;
-    private ArrayList<AdditionalOption> additionalOptions;
-    private ArrayList<Room> rooms;
-    private ArrayList<Category> categories;
-    private ArrayList<Order> bookings;
-    private ArrayList<AdditionalOption> selectedAdditionalOptions;
     private static EntityManagerFactory emf = Persistence.createEntityManagerFactory("PERSISTENCE_UNIT_NAME");
     private static EntityManager em = getEntityManager();
 
