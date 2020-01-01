@@ -5,4 +5,7 @@ public interface MyService {
     void viewRoomsByCategory(Category category);
     void book(Date startDate, Date endDate);
     int getTotalPrice(Room currentRoom, Date startDate, Date endDate);
+    ArrayList<Room> getAllRooms();
+    ArrayList<Category> getAllCategories();
+    ArrayList<AdditionalOption> getAllAdditionalOptions();
 }
